@@ -6,6 +6,7 @@
 class DPProblems
   def initialize
     # Use this to create any instance variables you may need
+    @fibonacci_cache = {1 => 1, 2 => 1}
   end
 
   # Takes in a positive integer n and returns the nth Fibonacci number
