@@ -12,6 +12,10 @@ class DPProblems
   # Takes in a positive integer n and returns the nth Fibonacci number
   # Should run in O(n) time
   def fibonacci(n)
+    return @fibonacci_cache[n] if @fibonacci_cache[n]
+    next_fib = fibonacci(n-1) + fibonacci(n-2)
+    @fibonacci_cache[n] = next_fib
+    return next_fib
   end
 
   # Make Change: write a function that takes in an amount and a set of coins.  Return the minimum number of coins
