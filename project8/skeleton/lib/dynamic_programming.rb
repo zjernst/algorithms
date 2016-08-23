@@ -1,3 +1,5 @@
+require 'byebug'
+
 # Dynamic Programming practice
 # NB: you can, if you want, define helper functions to create the necessary caches as instance variables in the constructor.
 # You may find it helpful to delegate the dynamic programming work itself to a helper method so that you can
@@ -23,6 +25,24 @@ class DPProblems
   # If it's not possible to make change for a given amount, return nil.  You may assume that the coin array is sorted
   # and in ascending order.
   def make_change(amt, coins, coin_cache = {0 => 0})
+    return coin_cache[amt] if coin_cache[amt]
+    return 0.0/0.0 if amt < coins[0]
+
+    best_change = amt
+    better_change = false
+    coins.each do |coin|
+      change = 1 + make_change(amt - coin, coins, coin_cache)
+      if change.is_a?(Integer)
+        better_change = true
+        best_change = change if change < best_change
+      end
+    end
+
+    if better_change
+      return coin_cache[amt] = best_change
+    else
+      return coin_cache[amt] = 0.0/0.0
+    end
   end
 
   # Knapsack Problem: write a function that takes in an array of weights, an array of values, and a weight capacity
