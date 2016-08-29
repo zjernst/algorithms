@@ -60,12 +60,14 @@ class DPProblems
   # NB: this is similar to, but not the same as, make_change.  Try implementing this using the opposite
   # DP technique that you used in make_change -- bottom up if you used top down and vice versa.
   def stair_climb(n)
+
   end
 
   # String Distance: given two strings, str1 and str2, calculate the minimum number of operations to change str1 into
   # str2.  Allowed operations are deleting a character ("abc" -> "ac", e.g.), inserting a character ("abc" -> "abac", e.g.),
   # and changing a single character into another ("abc" -> "abz", e.g.).
   def str_distance(str1, str2)
+
   end
 
   # Maze Traversal: write a function that takes in a maze (represented as a 2D matrix) and a starting
@@ -76,5 +78,6 @@ class DPProblems
   #             ['x', 'x', ' ', 'x']]
   # and the start is [1, 1], then the shortest escape route is [[1, 1], [1, 2], [2, 2]] and thus your function should return 3.
   def maze_escape(maze, start)
+    
   end
 end
